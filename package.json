@@ -7,19 +7,21 @@
   "main": "lib/index.js",
   "license": "WTFPL",
   "devDependencies": {
-    "babel-cli": "^6.4.5",
-    "babel-core": "^6.16.0",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-stage-3": "^6.24.1",
+    "@babel/cli": "^7.0.0-beta.32",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/preset-es2015": "^7.0.0-beta.32",
+    "@babel/preset-stage-3": "^7.0.0-beta.32",
+    "@babel/register": "^7.0.0-beta.32",
     "mocha": "^2.2.5",
     "ramda": "^0.23.0"
   },
   "dependencies": {
+    "@babel/helper-module-imports": "^7.0.0-beta.32",
     "ramda": "0.x"
   },
   "scripts": {
     "build": "rm -rf lib && babel src --out-dir lib",
-    "test": "mocha --compilers js:babel-core/register"
+    "test": "mocha --compilers js:@babel/register"
   },
   "keywords": [
     "ramda",
@@ -28,8 +30,8 @@
   ],
   "babel": {
     "presets": [
-      "es2015",
-      "stage-3"
+      "@babel/preset-es2015",
+      "@babel/preset-stage-3"
     ]
   }
 }
